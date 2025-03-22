@@ -10,7 +10,7 @@ from HW_way_1.Utils import attach
 
 
 @pytest.fixture
-def selenoid():
+def browser_manager():
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
