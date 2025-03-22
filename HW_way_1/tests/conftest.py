@@ -34,7 +34,7 @@ from HW_way_1.Utils import attach
 #     yield
 #     browser.quit()
 
-@pytest.fixture()
+@pytest.fixture(scope="session", autouse=True)
 def selenoid():
     options = Options()
     selenoid_capabilities = {
@@ -67,7 +67,7 @@ selenoid_pass = os.getenv("SELENOID_PASS")
 selenoid_url = os.getenv("SELENOID_URL")
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='session', autouse=True)
 def browser_manager():
     driver_options = webdriver.ChromeOptions()
     driver_options.page_load_strategy = 'eager'
